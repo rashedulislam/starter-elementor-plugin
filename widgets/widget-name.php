@@ -25,10 +25,6 @@ class Widget_Name extends Widget_Base {
 		return [ 'general' ];
 	}
 
-	public function get_script_depends() {
-		return [ 'text_domain' ];
-	}
-
 	protected function _register_controls() {
 		$this->start_controls_section(
 			'section_content',
@@ -55,40 +51,19 @@ class Widget_Name extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'text_transform',
-			[
-				'label' => __( 'Text Transform', 'text_domain' ),
-				'type' => Controls_Manager::SELECT,
-				'default' => '',
-				'options' => [
-					'' => __( 'None', 'text_domain' ),
-					'uppercase' => __( 'UPPERCASE', 'text_domain' ),
-					'lowercase' => __( 'lowercase', 'text_domain' ),
-					'capitalize' => __( 'Capitalize', 'text_domain' ),
-				],
-				'selectors' => [
-					'{{WRAPPER}} .title' => 'text-transform: {{VALUE}};',
-				],
-			]
-		);
 
 		$this->end_controls_section();
 	}
 
 	protected function render() {
-		$settings = $this->get_settings_for_display();
+		$settings = $this->get_settings_for_display(); ?>
 
-		echo '<div class="title">';
-		echo $settings['title'];
-		echo '</div>';
+
+		<?php
 	}
 
 	protected function _content_template() { ?>
 
-		<div class="title">
-			{{{ settings.title }}}
-		</div>
     
 		<?php
 	}
