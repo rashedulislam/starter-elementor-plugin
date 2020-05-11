@@ -33,24 +33,7 @@ class Widget_Name extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'title',
-			[
-				'label' => __( 'Title', 'text_domain' ),
-				'type' => Controls_Manager::TEXT,
-			]
-		);
-
-		$this->end_controls_section();
-
-		$this->start_controls_section(
-			'section_style',
-			[
-				'label' => __( 'Style', 'text_domain' ),
-				'tab' => Controls_Manager::TAB_STYLE,
-			]
-		);
-
+		
 
 		$this->end_controls_section();
 	}
